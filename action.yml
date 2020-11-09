@@ -2,8 +2,8 @@
 #
 # SPDX-License-Identifier: BSD-2-Clause
 
-name: "Add Remote Tag"
-description: "Remotely add more tags to an existing docker image"
+name: "Check for Docker tag"
+description: "Check a remote docker registry for a tag"
 
 branding:
   icon: tag
