@@ -17,7 +17,7 @@ async function main() {
     const auth = getAuth(registry);
 
     core.debug("Registry:   " + registry);
-    core.debug("Repositroy: " + repository);
+    core.debug("Repository: " + repository);
     core.debug("Tag:        " + tag);
 
     const checkUrl = `https://${registry}/v2/${repository}/manifests/${tag}`;
