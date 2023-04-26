@@ -11,14 +11,14 @@
   "author": "Benedict Harcourt",
   "license": "BSD-2-Clause",
   "engines": {
-    "node": "14.7.0"
+    "node": "^v16.0.0"
   },
   "dependencies": {
-    "@actions/core": "^1.2.6",
-    "@actions/github": "^4.0.0",
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.0.0",
     "r2": "^2.0.1"
   },
   "devDependencies": {
-    "eslint": "^7.6.0"
+    "eslint": "^8.39.0"
   }
 }
