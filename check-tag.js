@@ -40,10 +40,10 @@ async function main() {
     }
 
     manifest.json()
-        .then(mj => core.setOutput("exists", true))
+        .then(() => core.setOutput("exists", true))
         .catch(e => {
             core.debug(e.message);
-            core.setOutput("exists", false)
+            core.setOutput("exists", false);
         });
 }
 
