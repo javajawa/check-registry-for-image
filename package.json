@@ -11,7 +11,7 @@
   "author": "Benedict Harcourt",
   "license": "BSD-2-Clause",
   "engines": {
-    "node": "^v16.0.0"
+    "node": "^v16.17.0"
   },
   "dependencies": {
     "@actions/core": "^1.10.0",
