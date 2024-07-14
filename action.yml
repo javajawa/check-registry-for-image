@@ -28,7 +28,7 @@ outputs:
     description: "1 if the image exists, 0 otherwise"
 
 runs:
-  using: "node16"
+  using: "node20"
   main: "check-tag.js"
 
 # vim: nospell ts=2 expandtab

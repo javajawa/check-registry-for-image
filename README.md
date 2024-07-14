@@ -10,11 +10,11 @@ Helper action to remotely check if a docker image exists.
   # Check to see if this image is already built (and if so, skip further steps).
   - name: Check for existing image
     id: existing-image
-    uses: javajawa/check-registry-for-image@v1
+    uses: javajawa/check-registry-for-image@v2
     with:
-      registry: ${{ env.DOCKER_REGISTRY }}
-      repository: ${{ env.REPOSITORY }}
-      tag: ${{ env.IMAGE_TAG }}
+      registry: ${{ env.DOCKER_REGISTRY }}  # e.g. https://aws_account_id.dkr.ecr.us-west-2.amazonaws.com
+      repository: ${{ env.REPOSITORY }}     # my-awesome-project/server
+      tag: ${{ env.IMAGE_TAG }}             # Maybe ${{ github.sha }} ?
 
   # Build and push the Docker image.
   - name: Build the Docker image
