@@ -24,25 +24,36 @@ async function main() {
 
   core.debug("Checking for manifest at " + checkUrl);
 
-  const manifest = await requests.get(checkUrl, {
+  const request = await requests.get(checkUrl, {
     headers: {
       Accept: mime,
       Authorization: auth,
     },
   }).response;
 
-  if (manifest.status === 404) {
+  if (request.status === 404) {
     core.setOutput("exists", false);
     return;
   }
 
-  manifest
-    .json()
-    .then(() => core.setOutput("exists", true))
-    .catch((e) => {
-      core.debug(e.message);
-      core.setOutput("exists", false);
-    });
+  const manifest = await request.json();
+
+  if (Object.prototype.hasOwnProperty.call(manifest, "errors")) {
+    for (let error of manifest.errors) {
+      core.setFailed(error.message || error);
+    }
+    return;
+  }
+
+  if (Object.prototype.hasOwnProperty.call(manifest, "layers")) {
+    if (manifest.layers.length > 0) {
+      core.setOutput("exists", true);
+      return;
+    }
+  }
+
+  core.debug(manifest);
+  core.setOutput("exists", false);
 }
 
 function getAuth(registry) {
