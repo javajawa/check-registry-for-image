@@ -62,3 +62,11 @@ License: BSD-2-Clause
 Files: node_modules/r2/* node_modules/before-after-hook/* node_modules/caseless/*
 Copyright: January 2004
 License: Apache-2.0
+
+Files: node_modules/undici/*
+Copyright: Matteo Collina and Undici contributors
+License: MIT
+
+Files: node_modules/@fastify/busboy/*
+Copyright: Brian White
+License: MIT
